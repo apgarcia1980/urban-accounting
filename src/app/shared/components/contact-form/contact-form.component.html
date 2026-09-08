@@ -1,0 +1,73 @@
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <div class="field" [class.has-error]="hasError('name')">
+    <label for="contact-name">{{ content().fields.name }}</label
+    ><input
+      id="contact-name"
+      type="text"
+      autocomplete="name"
+      formControlName="name"
+      [attr.aria-invalid]="hasError('name')"
+      [attr.aria-describedby]="hasError('name') ? 'contact-name-error' : null"
+    />
+    @if (hasError('name')) {
+      <p id="contact-name-error" class="error" role="alert">{{ content().required }}</p>
+    }
+  </div>
+  <div class="field" [class.has-error]="hasError('email')">
+    <label for="contact-email">{{ content().fields.email }}</label
+    ><input
+      id="contact-email"
+      type="email"
+      autocomplete="email"
+      formControlName="email"
+      [attr.aria-invalid]="hasError('email')"
+      [attr.aria-describedby]="hasError('email') ? 'contact-email-error' : null"
+    />
+    @if (hasError('email')) {
+      <p id="contact-email-error" class="error" role="alert">
+        {{ form.controls.email.hasError('email') ? content().invalidEmail : content().required }}
+      </p>
+    }
+  </div>
+  <div class="field">
+    <label for="contact-phone"
+      >{{ content().fields.phone }} <span>({{ content().optional }})</span></label
+    ><input id="contact-phone" type="tel" autocomplete="tel" formControlName="phone" />
+  </div>
+  <div class="field" [class.has-error]="hasError('service')">
+    <label for="contact-service">{{ content().fields.service }}</label
+    ><select
+      id="contact-service"
+      formControlName="service"
+      [attr.aria-invalid]="hasError('service')"
+      [attr.aria-describedby]="hasError('service') ? 'contact-service-error' : null"
+    >
+      <option value="">{{ content().selectService }}</option>
+      @for (service of services(); track service.id) {
+        <option [value]="service.id">{{ service.title }}</option>
+      }
+    </select>
+    @if (hasError('service')) {
+      <p id="contact-service-error" class="error" role="alert">{{ content().required }}</p>
+    }
+  </div>
+  <div class="field" [class.has-error]="hasError('message')">
+    <label for="contact-message">{{ content().fields.message }}</label
+    ><textarea
+      id="contact-message"
+      rows="6"
+      formControlName="message"
+      [attr.aria-invalid]="hasError('message')"
+      [attr.aria-describedby]="hasError('message') ? 'contact-message-error' : null"
+    ></textarea>
+    @if (hasError('message')) {
+      <p id="contact-message-error" class="error" role="alert">{{ content().required }}</p>
+    }
+  </div>
+  <button class="button button-primary" type="submit">
+    {{ content().submit }}<span aria-hidden="true">↗</span>
+  </button>
+  @if (attempted() && form.valid) {
+    <p class="unavailable" role="status">{{ content().unavailable }}</p>
+  }
+</form>

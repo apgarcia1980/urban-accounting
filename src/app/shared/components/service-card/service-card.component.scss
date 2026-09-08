@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  min-inline-size: 0;
+}
+article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  scroll-margin-top: 2rem;
+  transition: border-color var(--motion-duration) var(--motion-easing);
+}
+article:hover,
+article:target {
+  border-color: var(--accent);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 2rem;
+}
+.service-mark {
+  color: var(--accent);
+  font-size: 1.75rem;
+  line-height: 1;
+}
+.number {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+h3 {
+  font-size: 1.25rem;
+  margin: 0 0 var(--space-sm);
+}
+p {
+  color: var(--muted);
+  margin: 0 0 var(--space-lg);
+  font-size: 0.9375rem;
+}
+a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 2.75rem;
+  margin-block-start: auto;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

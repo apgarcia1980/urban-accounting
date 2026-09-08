@@ -1,0 +1,12 @@
+<article [id]="'service-' + service().id">
+  <div class="card-top">
+    <span class="service-mark" aria-hidden="true">+</span
+    ><span class="number" aria-hidden="true">0{{ number() }}</span>
+  </div>
+  <h3>{{ service().title }}</h3>
+  <p>{{ service().description }}</p>
+  <a [routerLink]="destination()" [fragment]="fragment()"
+    >{{ action() }}<span class="sr-only">: {{ service().title }}</span
+    ><span aria-hidden="true">↗</span></a
+  >
+</article>

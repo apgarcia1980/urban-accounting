@@ -1,0 +1,11 @@
+<div class="map-frame">
+  <iframe
+    [src]="mapUrl()"
+    [title]="title()"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+<a class="text-link" [href]="directionsUrl" target="_blank" rel="noopener"
+  >{{ directionsLabel() }}<span aria-hidden="true">↗</span></a
+>

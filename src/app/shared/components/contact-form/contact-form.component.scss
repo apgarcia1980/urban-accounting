@@ -1,0 +1,58 @@
+form {
+  display: grid;
+  gap: 1rem;
+}
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+label span {
+  color: var(--muted);
+  font-weight: 400;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.75rem;
+  font: inherit;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.has-error input,
+.has-error select,
+.has-error textarea {
+  border-color: #ba1a1a;
+}
+.error {
+  margin: 0;
+  color: #ba1a1a;
+  font-size: 0.8125rem;
+}
+.error::before {
+  content: '⚠ ';
+}
+.unavailable {
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 0.875rem;
+}

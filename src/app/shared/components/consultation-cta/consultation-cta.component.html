@@ -1,0 +1,13 @@
+<section class="consultation dark-surface">
+  <div>
+    <p class="eyebrow">{{ content().eyebrow }}</p>
+    <h2>{{ content().title }}</h2>
+    <p class="description">{{ content().description }}</p>
+  </div>
+  <div class="action">
+    <a class="button button-light" [routerLink]="destination()"
+      >{{ content().action }}<span aria-hidden="true">↗</span></a
+    >
+    <p>{{ content().note }}</p>
+  </div>
+</section>

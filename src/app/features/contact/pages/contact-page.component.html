@@ -1,0 +1,55 @@
+<div class="container">
+  <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
+</div>
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="eyebrow">{{ content().hero.eyebrow }}</p>
+      <h1>{{ content().hero.title }}</h1>
+      <p>{{ content().hero.description }}</p>
+      <a class="text-link" [routerLink]="pageUrl(language.current(), 'services')"
+        >{{ content().hero.action }}<span aria-hidden="true">↗</span></a
+      >
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container contact-grid">
+    <div class="details">
+      <p class="eyebrow">{{ content().introduction.eyebrow }}</p>
+      <h2>{{ content().introduction.title }}</h2>
+      <div class="prose">
+        @for (paragraph of content().introduction.paragraphs; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+      <address>
+        <strong>{{ business.name }}</strong
+        ><span>{{ business.address.streetAddress }}</span
+        ><span
+          >{{ business.address.addressLocality }}, {{ business.address.addressRegion }}
+          {{ business.address.postalCode }}</span
+        ><a [href]="business.phoneHref">{{ business.phone }}</a
+        ><a [href]="'mailto:' + business.email">{{ business.email }}</a>
+      </address>
+    </div>
+    <div class="form-card">
+      <app-contact-form [content]="formContent()" [services]="services()" />
+    </div>
+  </div>
+</section>
+<section class="section location">
+  <div class="container">
+    <div class="section-intro">
+      <div>
+        <p class="eyebrow">{{ content().local.eyebrow }}</p>
+        <h2>{{ content().local.title }}</h2>
+      </div>
+      <p class="section-description">{{ content().local.description }}</p>
+    </div>
+    <app-location-map
+      [title]="formContent().mapTitle"
+      [directionsLabel]="formContent().mapDirections"
+    />
+  </div>
+</section>

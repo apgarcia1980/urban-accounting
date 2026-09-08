@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100dvh;
+}
+main {
+  flex: 1;
+}
+.skip-link {
+  position: fixed;
+  inset-block-start: var(--space-sm);
+  inset-inline-start: var(--space-sm);
+  transform: translateY(-200%);
+  padding: var(--space-md);
+  background: var(--surface);
+  z-index: 10;
+}
+.skip-link:focus {
+  transform: none;
+}

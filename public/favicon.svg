@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .background { fill: #ffffff; }
+    .mark { fill: none; stroke: #006a61; stroke-linecap: square; stroke-linejoin: miter; stroke-width: 4; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #0b192c; }
+      .mark { stroke: #ffffff; }
+    }
+  </style>
+  <rect class="background" width="64" height="64" rx="14" />
+  <path class="mark" d="M12 47V31l10-3v19M28 47V14h10v33M44 47V25h8v22M10 53h44" />
+</svg>

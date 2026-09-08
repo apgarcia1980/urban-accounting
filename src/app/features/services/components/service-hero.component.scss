@@ -1,0 +1,137 @@
+:host {
+  display: block;
+}
+.hero {
+  border-bottom: 1px solid var(--hairline);
+  padding-block: clamp(2rem, 4vw, 4rem) var(--section-space);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.8fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+h1 {
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  max-width: 19ch;
+  margin: 1.25rem 0 1.5rem;
+  text-wrap: balance;
+}
+.description {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 53ch;
+  margin-bottom: 1.75rem;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+.actions .button {
+  font-size: 0.8125rem;
+}
+.note {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin: 1.5rem 0 0;
+}
+.focus-card {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+}
+.monogram {
+  color: var(--accent);
+  font-size: 1.75rem;
+  letter-spacing: -0.08em;
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 1.25rem;
+  font-size: 1rem;
+}
+.number {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.625rem;
+  color: var(--accent);
+}
+.cross {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--accent);
+}
+.architecture {
+  height: 3.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+  opacity: 0.7;
+}
+.architecture span {
+  width: 2.5rem;
+  height: 2rem;
+  border: 1px solid var(--accent);
+}
+.architecture span:nth-child(2) {
+  height: 3.5rem;
+}
+.architecture span:last-child {
+  height: 2.75rem;
+}
+@media (max-width: 64rem) {
+  .hero-grid {
+    gap: 2rem;
+  }
+  .actions .button {
+    width: 100%;
+  }
+}
+@media (max-width: 47.99rem) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .focus-card {
+    max-width: 35rem;
+  }
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .actions .text-link {
+    justify-content: center;
+  }
+  h1 {
+    max-width: 20ch;
+  }
+  .hero {
+    padding-top: 1.5rem;
+  }
+}

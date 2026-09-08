@@ -1,0 +1,19 @@
+<nav [attr.aria-label]="language.content().languageNavigation">
+  <a
+    [routerLink]="language.equivalentUrl('en')"
+    lang="en-US"
+    hreflang="en-US"
+    aria-label="English"
+    [attr.aria-current]="language.current() === 'en' ? 'true' : null"
+    >EN</a
+  >
+  <span aria-hidden="true">/</span>
+  <a
+    [routerLink]="language.equivalentUrl('es')"
+    lang="es-US"
+    hreflang="es-US"
+    aria-label="Español"
+    [attr.aria-current]="language.current() === 'es' ? 'true' : null"
+    >ES</a
+  >
+</nav>

@@ -1,0 +1,6 @@
+@for (item of items(); track item.question) {
+  <details>
+    <summary>{{ item.question }}<span aria-hidden="true" class="indicator"></span></summary>
+    <p>{{ item.answer }}</p>
+  </details>
+}

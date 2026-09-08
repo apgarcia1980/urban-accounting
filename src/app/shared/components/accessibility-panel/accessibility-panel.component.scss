@@ -1,0 +1,47 @@
+:host {
+  display: block;
+}
+details {
+  position: relative;
+}
+summary {
+  white-space: nowrap;
+  cursor: pointer;
+  min-block-size: 2.75rem;
+  padding: 0.5rem 0.25rem;
+  align-content: center;
+  font-size: inherit;
+  color: var(--ink);
+}
+.preferences {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 100%;
+  z-index: 10;
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  width: min(19rem, calc(100vw - 2rem));
+  box-shadow: 0 12px 32px rgb(11 25 44 / 8%);
+  font-size: 0.875rem;
+}
+:host-context(app-footer) .preferences {
+  inset-block-start: auto;
+  inset-block-end: 100%;
+}
+label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-block-size: 2.75rem;
+}
+input {
+  accent-color: var(--accent);
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  flex-shrink: 0;
+}

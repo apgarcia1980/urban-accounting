@@ -1,0 +1,22 @@
+<section class="hub-hero">
+  <div class="container">
+    <p class="eyebrow">{{ language.content().navigation.services }}</p>
+    <h1>{{ language.content().servicesHub.title }}</h1>
+    <p>{{ language.content().servicesHub.description }}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
+      @for (service of services(); track service.id; let i = $index) {
+        <app-service-card
+          [service]="service"
+          [number]="i + 1"
+          [action]="language.current() === 'es' ? 'Conoce este servicio' : 'Explore this service'"
+          [destination]="serviceLink(language.current(), service.id).path"
+          [fragment]="serviceLink(language.current(), service.id).fragment"
+        />
+      }
+    </div>
+  </div>
+</section>

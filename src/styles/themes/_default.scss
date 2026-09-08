@@ -1,0 +1,24 @@
+:root {
+  --canvas: var(--palette-canvas);
+  --surface: var(--palette-white);
+  --soft-surface: #f1f5f9;
+  --ink: var(--palette-ink);
+  --muted: #536174;
+  --accent: var(--palette-teal);
+  --border: var(--palette-border);
+  --hairline: #dce3e9;
+  --focus: var(--palette-teal);
+}
+.dark-surface {
+  --canvas: var(--palette-ink);
+  --surface: #13263a;
+  --soft-surface: #172e42;
+  --ink: #f8fafc;
+  --muted: #c0cbd7;
+  --accent: #82cfd0;
+  --border: #8ea6b8;
+  --hairline: #354759;
+  --focus: #82cfd0;
+  background: var(--canvas);
+  color: var(--ink);
+}

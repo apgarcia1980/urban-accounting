@@ -1,0 +1,81 @@
+<header>
+  <div class="utility-bar">
+    <div class="container utility-content">
+      <a class="utility-phone" [href]="business.phoneHref"
+        ><span aria-hidden="true">↗</span>{{ business.phone }}</a
+      >
+      <div class="utility-tools">
+        <app-language-switcher /><app-accessibility-panel idPrefix="header" />
+      </div>
+    </div>
+  </div>
+  <div class="container header-content" (keydown.escape)="closeMenu(menuButton)">
+    <a
+      class="brand"
+      [routerLink]="pageUrl(language.current(), 'home')"
+      aria-label="Urban Accounting"
+    >
+      <svg aria-hidden="true" viewBox="0 0 32 32" width="32" height="32">
+        <path
+          d="M3 27V14h6v13M13 27V5h6v22M23 27V10h6v17"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <path d="M1 31h30" stroke="currentColor" stroke-width="2" />
+      </svg>
+      <span>URBAN<span class="brand-subtitle">ACCOUNTING</span></span>
+    </a>
+    <button
+      #menuButton
+      type="button"
+      class="menu-toggle"
+      aria-controls="primary-navigation"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="menuOpen.set(!menuOpen())"
+    >
+      {{ menuOpen() ? language.content().closeMenu : language.content().menu
+      }}<span aria-hidden="true">{{ menuOpen() ? '×' : '☰' }}</span>
+    </button>
+    <div id="primary-navigation" class="navigation-area" [class.is-open]="menuOpen()">
+      <nav [attr.aria-label]="language.content().mainNavigation">
+        <div class="services-disclosure" (keydown.escape)="closeServices($event, servicesButton)">
+          <button
+            #servicesButton
+            type="button"
+            class="services-toggle"
+            aria-controls="services-navigation"
+            [attr.aria-expanded]="servicesOpen()"
+            (click)="servicesOpen.set(!servicesOpen())"
+          >
+            {{ language.content().navigation.services
+            }}<span aria-hidden="true">{{ servicesOpen() ? '−' : '+' }}</span>
+          </button>
+          <div id="services-navigation" class="services-menu" [hidden]="!servicesOpen()">
+            <a [routerLink]="pageUrl(language.current(), 'home')" fragment="services"
+              >{{ language.content().allServices }}<span aria-hidden="true">↗</span></a
+            >
+            @for (service of language.content().services; track service.id) {
+              <a
+                [routerLink]="serviceLink(language.current(), service.id).path"
+                [fragment]="serviceLink(language.current(), service.id).fragment"
+                >{{ service.title }}</a
+              >
+            }
+          </div>
+        </div>
+        @for (page of pages; track page) {
+          <a
+            [routerLink]="pageUrl(language.current(), page)"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >{{ language.content().navigation[page] }}</a
+          >
+        }
+      </nav>
+      <a class="button button-primary header-cta" [routerLink]="consultation()"
+        >{{ language.content().consultation }}<span aria-hidden="true">↗</span></a
+      >
+    </div>
+  </div>
+</header>

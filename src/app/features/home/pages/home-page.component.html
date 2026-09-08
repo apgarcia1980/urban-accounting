@@ -1,0 +1,121 @@
+<app-home-hero
+  [content]="content().hero"
+  [services]="content().services.items"
+  [consultation]="consultation()"
+  [homeUrl]="pageUrl(language.current(), 'home')"
+/>
+
+<section id="services" class="section services-section">
+  <div class="container">
+    <div class="section-intro">
+      <div>
+        <p class="eyebrow">{{ content().services.eyebrow }}</p>
+        <h2>{{ content().services.title }}</h2>
+      </div>
+      <p class="section-description">{{ content().services.description }}</p>
+    </div>
+    <div class="services-grid">
+      @for (service of content().services.items; track service.id; let i = $index) {
+        <app-service-card
+          [service]="service"
+          [number]="i + 1"
+          [action]="content().services.action"
+          [destination]="serviceDestination(language.current(), service.id)"
+        />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section about-section">
+  <div class="container about-grid">
+    <div class="about-copy">
+      <p class="eyebrow">{{ content().about.eyebrow }}</p>
+      <h2>{{ content().about.title }}</h2>
+      <p class="section-description">{{ content().about.description }}</p>
+      <a class="text-link" [routerLink]="pageUrl(language.current(), 'about')"
+        >{{ content().about.action }}<span aria-hidden="true">↗</span></a
+      >
+    </div>
+    <div class="principles">
+      @for (principle of content().about.principles; track principle.title; let i = $index) {
+        <article>
+          <span aria-hidden="true" class="principle-number">0{{ i + 1 }}</span>
+          <div>
+            <h3>{{ principle.title }}</h3>
+            <p>{{ principle.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section process-section">
+  <div class="container">
+    <div class="section-intro">
+      <div>
+        <p class="eyebrow">{{ content().process.eyebrow }}</p>
+        <h2>{{ content().process.title }}</h2>
+      </div>
+      <p class="section-description">{{ content().process.description }}</p>
+    </div>
+    <ol class="process-grid">
+      @for (step of content().process.steps; track step.title; let i = $index) {
+        <li>
+          <span class="step-number" aria-hidden="true">0{{ i + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section local-section">
+  <div class="container local-grid">
+    <div>
+      <p class="eyebrow">{{ content().local.eyebrow }}</p>
+      <h2>{{ content().local.title }}</h2>
+      <p class="section-description">{{ content().local.description }}</p>
+      <a class="text-link" [routerLink]="pageUrl(language.current(), 'contact')"
+        >{{ content().local.action }}<span aria-hidden="true">↗</span></a
+      >
+    </div>
+    <div class="local-card">
+      <div class="local-art" aria-hidden="true">
+        <span>MIAMI</span><span class="local-art-caption">URBAN ACCOUNTING / FLORIDA</span><i></i
+        ><i></i><i></i>
+      </div>
+      <div class="local-details">
+        <div>
+          <p class="eyebrow">{{ content().local.addressLabel }}</p>
+          <address>
+            {{ business.address.streetAddress }}<br />{{ business.address.addressLocality }},
+            {{ business.address.addressRegion }} {{ business.address.postalCode }}
+          </address>
+        </div>
+        <div>
+          <p class="eyebrow">{{ content().local.contactLabel }}</p>
+          <a [href]="business.phoneHref">{{ business.phone }}</a
+          ><a [href]="'mailto:' + business.email">{{ business.email }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section">
+  <div class="container faq-grid">
+    <div>
+      <p class="eyebrow">{{ content().faq.eyebrow }}</p>
+      <h2>{{ content().faq.title }}</h2>
+      <p class="section-description">{{ content().faq.description }}</p>
+    </div>
+    <app-faq [items]="content().faq.items" />
+  </div>
+</section>
+
+<div class="container cta-section">
+  <app-consultation-cta [content]="content().cta" [destination]="consultation()" />
+</div>

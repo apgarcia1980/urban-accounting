@@ -1,0 +1,6 @@
+<a class="skip-link" [href]="router.url.split('#')[0] + '#main-content'">{{
+  language.content().skip
+}}</a>
+<app-header />
+<main id="main-content" tabindex="-1"><router-outlet /></main>
+<app-footer />

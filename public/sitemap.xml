@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>http://localhost:4200/en/</loc></url>
+  <url><loc>http://localhost:4200/en/services/</loc></url>
+  <url><loc>http://localhost:4200/en/about/</loc></url>
+  <url><loc>http://localhost:4200/en/contact/</loc></url>
+  <url><loc>http://localhost:4200/en/services/accounting-services-miami/</loc></url>
+  <url><loc>http://localhost:4200/en/services/bookkeeping-services-miami/</loc></url>
+  <url><loc>http://localhost:4200/en/services/financial-statements-miami/</loc></url>
+  <url><loc>http://localhost:4200/en/services/tax-preparation-miami/</loc></url>
+  <url><loc>http://localhost:4200/en/services/tax-planning-miami/</loc></url>
+  <url><loc>http://localhost:4200/es/</loc></url>
+  <url><loc>http://localhost:4200/es/servicios/</loc></url>
+  <url><loc>http://localhost:4200/es/nosotros/</loc></url>
+  <url><loc>http://localhost:4200/es/contacto/</loc></url>
+  <url><loc>http://localhost:4200/es/servicios/servicios-contabilidad-miami/</loc></url>
+  <url><loc>http://localhost:4200/es/servicios/bookkeeping-miami/</loc></url>
+  <url><loc>http://localhost:4200/es/servicios/estados-financieros-miami/</loc></url>
+  <url><loc>http://localhost:4200/es/servicios/preparacion-impuestos-miami/</loc></url>
+  <url><loc>http://localhost:4200/es/servicios/planificacion-fiscal-miami/</loc></url>
+</urlset>

@@ -1,0 +1,109 @@
+<div class="container">
+  <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
+</div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">{{ content().hero.eyebrow }}</p>
+      <h1>{{ content().hero.title }}</h1>
+      <p>{{ content().hero.description }}</p>
+      <a class="button button-primary" [routerLink]="pageUrl(language.current(), 'contact')"
+        >{{ content().hero.action }}<span aria-hidden="true">↗</span></a
+      >
+    </div>
+    <div class="hero-card dark-surface">
+      <span aria-hidden="true">ua.</span>
+      <p>{{ language.content().navigation.services }}</p>
+      <ul>
+        @for (service of services(); track service.id) {
+          <li>{{ service.title }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">{{ content().introduction.eyebrow }}</p>
+      <h2>{{ content().introduction.title }}</h2>
+    </div>
+    <div class="prose">
+      @for (paragraph of content().introduction.paragraphs; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+  </div>
+</section>
+@if (content().approach; as approach) {
+  <section class="section approach">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">{{ approach.eyebrow }}</p>
+          <h2>{{ approach.title }}</h2>
+        </div>
+        <p class="section-description">{{ approach.description }}</p>
+      </div>
+      <div class="approach-grid">
+        @for (item of approach.items; track item.title; let i = $index) {
+          <article>
+            <span aria-hidden="true">0{{ i + 1 }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+}
+@if (content().related; as related) {
+  <section class="section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">{{ related.eyebrow }}</p>
+          <h2>{{ related.title }}</h2>
+        </div>
+        <p class="section-description">{{ related.description }}</p>
+      </div>
+      <div class="services-grid">
+        @for (service of services(); track service.id; let i = $index) {
+          <app-service-card
+            [service]="service"
+            [number]="i + 1"
+            [action]="related.action"
+            [destination]="serviceLink(language.current(), service.id).path"
+            [fragment]="serviceLink(language.current(), service.id).fragment"
+          />
+        }
+      </div>
+    </div>
+  </section>
+}
+<section class="section local">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">{{ content().local.eyebrow }}</p>
+      <h2>{{ content().local.title }}</h2>
+      <p class="section-description">{{ content().local.description }}</p>
+      <a class="text-link" [routerLink]="pageUrl(language.current(), 'contact')"
+        >{{ content().local.action }}<span aria-hidden="true">↗</span></a
+      >
+    </div>
+    <address class="local-card">
+      <p class="eyebrow">{{ content().local.addressLabel }}</p>
+      <strong>{{ business.name }}</strong
+      ><span>{{ business.address.streetAddress }}</span
+      ><span
+        >{{ business.address.addressLocality }}, {{ business.address.addressRegion }}
+        {{ business.address.postalCode }}</span
+      ><a [href]="business.phoneHref">{{ business.phone }}</a>
+    </address>
+  </div>
+</section>
+@if (content().cta; as cta) {
+  <div class="container cta">
+    <app-consultation-cta [content]="cta" [destination]="pageUrl(language.current(), 'contact')" />
+  </div>
+}

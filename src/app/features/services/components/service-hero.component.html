@@ -1,0 +1,33 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{{ content().eyebrow }}</p>
+      <h1>{{ content().title }}</h1>
+      <p class="description">{{ content().description }}</p>
+      <div class="actions">
+        <a class="button button-primary" [routerLink]="consultation()"
+          >{{ content().primary }}<span aria-hidden="true">↗</span></a
+        ><a class="text-link" [routerLink]="path()" fragment="service-details"
+          >{{ content().secondary }}<span aria-hidden="true">↓</span></a
+        >
+      </div>
+      <p class="note">{{ content().note }}</p>
+    </div>
+    <div class="focus-card dark-surface">
+      <div class="card-top">
+        <span class="monogram" aria-hidden="true">ua.</span
+        ><span aria-hidden="true">MIAMI / FL</span>
+      </div>
+      <ul>
+        @for (focus of content().focus; track focus; let i = $index) {
+          <li>
+            <span class="number" aria-hidden="true">0{{ i + 1 }}</span
+            ><span>{{ focus }}</span
+            ><span class="cross" aria-hidden="true">+</span>
+          </li>
+        }
+      </ul>
+      <div class="architecture" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>

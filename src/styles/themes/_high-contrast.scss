@@ -1,0 +1,13 @@
+:root.high-contrast,
+.high-contrast .dark-surface {
+  --canvas: #000;
+  --surface: #000;
+  --soft-surface: #000;
+  --ink: #fff;
+  --muted: #fff;
+  --accent: #ffeb3b;
+  --border: #fff;
+  --hairline: #fff;
+  --focus: #ffeb3b;
+  color-scheme: dark;
+}

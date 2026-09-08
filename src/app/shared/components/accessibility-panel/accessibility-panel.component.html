@@ -1,0 +1,37 @@
+<details #panel (keydown.escape)="closePanel(panel, summary)">
+  <summary #summary>{{ language.content().accessibility.title }}</summary>
+  <div class="preferences">
+    <label [for]="idPrefix() + '-text-scale'">{{
+      language.content().accessibility.textSize
+    }}</label>
+    <select
+      [id]="idPrefix() + '-text-scale'"
+      #scale
+      [value]="accessibility.preferences().textScale"
+      (change)="accessibility.setTextScale(scale.value)"
+    >
+      <option value="100">{{ language.content().accessibility.standard }}</option>
+      <option value="125">{{ language.content().accessibility.large }}</option>
+      <option value="150">{{ language.content().accessibility.extraLarge }}</option>
+    </select>
+    <label
+      ><input
+        type="checkbox"
+        #contrast
+        [checked]="accessibility.preferences().highContrast"
+        (change)="accessibility.setHighContrast(contrast.checked)"
+      />{{ language.content().accessibility.contrast }}</label
+    >
+    <label
+      ><input
+        type="checkbox"
+        #motion
+        [checked]="accessibility.preferences().reducedMotion"
+        (change)="accessibility.setReducedMotion(motion.checked)"
+      />{{ language.content().accessibility.motion }}</label
+    >
+    <button type="button" (click)="accessibility.reset()">
+      {{ language.content().accessibility.reset }}
+    </button>
+  </div>
+</details>
