@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { afterNextRender, Component, computed, DestroyRef, inject, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { LanguageService } from '../../core/i18n/language.service';
@@ -23,9 +23,17 @@ export class HeaderComponent {
   protected readonly menuOpen = signal(false);
   protected readonly servicesOpen = signal(false);
   protected readonly isHome = signal(false);
+  protected readonly isScrolled = signal(false);
   protected readonly consultation = computed(() => consultationRoutes[this.language.current()]);
 
   constructor() {
+    const destroyRef = inject(DestroyRef);
+    afterNextRender(() => {
+      const updateScroll = () => this.isScrolled.set(window.scrollY > 16);
+      updateScroll();
+      window.addEventListener('scroll', updateScroll, { passive: true });
+      destroyRef.onDestroy(() => window.removeEventListener('scroll', updateScroll));
+    });
     const router = inject(Router);
     this.isHome.set(/^\/(en|es)\/?$/.test(router.url));
     router.events.pipe(takeUntilDestroyed()).subscribe((event) => {

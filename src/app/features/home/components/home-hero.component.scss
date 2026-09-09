@@ -61,6 +61,16 @@ h1 {
   width: 100%;
   height: 100%;
 }
+:host-context(.high-contrast) .financial-visual,
+:host-context(.high-contrast) .hero::after {
+  display: none;
+}
+@media (forced-colors: active) {
+  .financial-visual,
+  .hero::after {
+    display: none;
+  }
+}
 .financial-visual {
   z-index: -1;
 }
@@ -81,12 +91,17 @@ h1 {
     rgb(252 251 248 / 0%) 66%
   );
 }
+@media (min-width: 48rem) and (max-width: 70rem) {
+  .hero-grid {
+    padding-block-start: 14rem;
+  }
+}
 @media (max-width: 47.99rem) {
   .hero {
     min-height: 0;
   }
   .hero-grid {
-    padding-block: 4.5rem 5rem;
+    padding-block: 10rem 5rem;
   }
   h1 {
     max-width: 13ch;

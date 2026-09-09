@@ -7,17 +7,17 @@ header {
   background: var(--surface);
   border-block-end: 1px solid var(--hairline);
 }
+:host:has(.home-overlay) {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+}
+.home-overlay {
+  border-block-end: 1px solid rgb(11 25 44 / 10%);
+  background: linear-gradient(90deg, rgb(252 251 248 / 32%), rgb(252 251 248 / 42%));
+  backdrop-filter: blur(2px);
+}
 @media (min-width: 48rem) {
-  :host:has(.home-overlay) {
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline: 0;
-  }
-  .home-overlay {
-    border-block-end: 1px solid rgb(11 25 44 / 10%);
-    background: linear-gradient(90deg, rgb(252 251 248 / 32%), rgb(252 251 248 / 42%));
-    backdrop-filter: blur(2px);
-  }
   .home-overlay .header-content {
     padding-block: 1.5rem;
   }
@@ -130,6 +130,10 @@ nav a:hover {
 :host-context(.high-contrast) .home-overlay nav a,
 :host-context(.high-contrast) .home-overlay .services-toggle {
   color: var(--ink);
+  text-shadow: none;
+}
+.home-overlay.is-scrolled {
+  background: var(--surface);
 }
 .services-menu {
   position: absolute;
@@ -170,6 +174,12 @@ nav a:hover {
   }
 }
 @media (max-width: 47.99rem) {
+  .home-overlay .navigation-area.is-open {
+    background: var(--surface);
+    padding: 1rem;
+    max-block-size: calc(100dvh - 9rem);
+    overflow-y: auto;
+  }
   .header-content {
     justify-content: space-between;
   }
