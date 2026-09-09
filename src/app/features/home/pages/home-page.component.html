@@ -5,6 +5,56 @@
   [homeUrl]="pageUrl(language.current(), 'home')"
 />
 
+<section
+  class="trust-strip"
+  [attr.aria-label]="
+    language.current() === 'es'
+      ? 'Credenciales profesionales y plataformas'
+      : 'Professional credentials and platforms'
+  "
+>
+  <div class="container">
+    <p class="trust-title">
+      <span></span
+      >{{
+        language.current() === 'es'
+          ? 'EXPERIENCIA DE CONFIANZA. HERRAMIENTAS CONOCIDAS.'
+          : 'TRUSTED EXPERTISE. FAMILIAR TOOLS.'
+      }}<span></span>
+    </p>
+    <div class="trust-groups">
+      <div class="trust-group">
+        <p class="eyebrow">
+          ⌘&nbsp;
+          {{
+            language.current() === 'es' ? 'CREDENCIALES PROFESIONALES' : 'PROFESSIONAL CREDENTIALS'
+          }}
+        </p>
+        <div class="trust-marks credentials">
+          <span class="quickbooks-mark"
+            ><b>qb</b><i>intuit</i><strong>quickbooks</strong
+            ><small>Certified ProAdvisor</small></span
+          >
+          <span class="enrolled-agent-mark"
+            ><b>EA</b><strong>ENROLLED AGENT</strong><small>AUTHORIZED BY THE IRS</small></span
+          >
+        </div>
+      </div>
+      <div class="trust-group platforms">
+        <p class="eyebrow">
+          ▱&nbsp;
+          {{ language.current() === 'es' ? 'PLATAFORMAS Y ECOSISTEMAS' : 'PLATFORMS & ECOSYSTEMS' }}
+        </p>
+        <div class="trust-marks">
+          <span class="oracle-mark">ORACLE<small>NETSUITE</small></span>
+          <span class="sage-mark">Sage</span>
+          <img class="sap-mark" src="/images/sap-wordmark.svg" alt="SAP" width="80" height="43" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services" class="section services-section">
   <div class="container">
     <div class="section-intro">

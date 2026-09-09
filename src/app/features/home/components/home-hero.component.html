@@ -16,27 +16,15 @@
       </div>
       <p class="location-line"><span aria-hidden="true">◎</span>{{ content().location }}</p>
     </div>
-    <div class="financial-visual dark-surface" aria-hidden="true">
-      <div class="visual-grid"></div>
-      <div class="visual-orbit"></div>
-      <div class="visual-top">
-        <span class="monogram">ua<span>.</span></span
-        ><span>MIAMI / FL</span>
-      </div>
-      <div class="visual-heading">
-        <p class="eyebrow">{{ content().visualLabel }}</p>
-        <p>{{ content().visualTitle }}</p>
-      </div>
-      <div class="folio">
-        @for (service of services(); track service.id; let i = $index) {
-          <div>
-            <span class="folio-number">0{{ i + 1 }}</span
-            ><span>{{ service.title }}</span
-            ><span class="folio-tick">↗</span>
-          </div>
-        }
-      </div>
-      <div class="visual-bottom"><span class="status-dot"></span>{{ content().visualNote }}</div>
+    <div class="financial-visual" aria-hidden="true">
+      <img
+        class="hero-photo"
+        src="/images/miami-home-hero-v2.webp"
+        width="1920"
+        height="1080"
+        alt=""
+        fetchpriority="high"
+      />
     </div>
   </div>
 </section>

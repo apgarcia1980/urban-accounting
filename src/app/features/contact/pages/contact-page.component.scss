@@ -2,13 +2,18 @@
   display: block;
 }
 .hero {
-  inline-size: min(
-    100%,
-    calc(max(0px, (100% - var(--container-max)) / 2) + var(--gutter) + 44rem + var(--gutter))
-  );
-  margin-inline-start: max(0px, calc((100% - var(--container-max)) / 2));
+  inline-size: 100%;
+  margin-inline-start: 0;
   padding-block: 2.5rem 3rem;
   border-bottom: 1px solid var(--hairline);
+  background:
+    linear-gradient(
+      90deg,
+      var(--canvas) 0%,
+      rgb(252 251 248 / 95%) 38%,
+      rgb(252 251 248 / 18%) 72%
+    ),
+    url('/images/miami-bay-hero.webp') right center / auto 100% no-repeat;
 }
 .hero-content {
   max-width: 44rem;
@@ -56,13 +61,17 @@ address a {
 }
 .form-card {
   padding: clamp(1.25rem, 3vw, 2.5rem);
-  background: var(--soft-surface);
+  background: rgb(255 255 255 / 72%);
+  box-shadow: 0 1.5rem 3rem rgb(11 25 44 / 6%);
   border: 1px solid var(--hairline);
 }
 .location {
-  background: var(--soft-surface);
+  background: linear-gradient(180deg, var(--soft-surface), var(--canvas));
 }
 @media (max-width: 48rem) {
+  .hero {
+    background: var(--canvas);
+  }
   .contact-grid {
     grid-template-columns: 1fr;
   }

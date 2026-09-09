@@ -5,10 +5,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { LanguageService } from '../../core/i18n/language.service';
+import { BackToTopComponent } from '../../shared/components/back-to-top/back-to-top.component';
 
 @Component({
   selector: 'app-page-shell',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, BackToTopComponent],
   templateUrl: './page-shell.component.html',
   styleUrl: './page-shell.component.scss',
 })

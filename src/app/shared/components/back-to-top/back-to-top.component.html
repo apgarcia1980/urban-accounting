@@ -1,0 +1,10 @@
+@if (visible()) {
+  <button
+    class="back-to-top"
+    type="button"
+    (click)="scrollToTop()"
+    [attr.aria-label]="language.current() === 'es' ? 'Volver arriba' : 'Back to top'"
+  >
+    <span aria-hidden="true">↑</span>
+  </button>
+}

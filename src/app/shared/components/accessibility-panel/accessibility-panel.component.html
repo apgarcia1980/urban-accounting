@@ -8,7 +8,7 @@
       [id]="idPrefix() + '-text-scale'"
       #scale
       [value]="accessibility.preferences().textScale"
-      (change)="accessibility.setTextScale(scale.value)"
+      (change)="setTextScale(scale.value, panel, summary)"
     >
       <option value="100">{{ language.content().accessibility.standard }}</option>
       <option value="125">{{ language.content().accessibility.large }}</option>
@@ -19,7 +19,7 @@
         type="checkbox"
         #contrast
         [checked]="accessibility.preferences().highContrast"
-        (change)="accessibility.setHighContrast(contrast.checked)"
+        (change)="setHighContrast(contrast.checked, panel, summary)"
       />{{ language.content().accessibility.contrast }}</label
     >
     <label
@@ -27,10 +27,10 @@
         type="checkbox"
         #motion
         [checked]="accessibility.preferences().reducedMotion"
-        (change)="accessibility.setReducedMotion(motion.checked)"
+        (change)="setReducedMotion(motion.checked, panel, summary)"
       />{{ language.content().accessibility.motion }}</label
     >
-    <button type="button" (click)="accessibility.reset()">
+    <button type="button" (click)="reset(panel, summary)">
       {{ language.content().accessibility.reset }}
     </button>
   </div>

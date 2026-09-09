@@ -1,0 +1,34 @@
+:host {
+  position: fixed;
+  inset-inline-end: var(--space-lg);
+  inset-block-end: var(--space-lg);
+  z-index: 5;
+}
+.back-to-top {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--surface);
+  background: var(--ink);
+  box-shadow: 0 0.5rem 1.5rem rgb(11 25 44 / 18%);
+  font: inherit;
+  font-size: 1.25rem;
+}
+.back-to-top:hover {
+  color: var(--surface);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.back-to-top:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+@media (max-width: 30rem) {
+  :host {
+    inset-inline-end: var(--space-md);
+    inset-block-end: var(--space-md);
+  }
+}
