@@ -22,17 +22,19 @@ export class HeaderComponent {
   protected readonly serviceLink = serviceLink;
   protected readonly menuOpen = signal(false);
   protected readonly servicesOpen = signal(false);
+  protected readonly isHome = signal(false);
   protected readonly consultation = computed(() => consultationRoutes[this.language.current()]);
 
   constructor() {
-    inject(Router)
-      .events.pipe(takeUntilDestroyed())
-      .subscribe((event) => {
-        if (event instanceof NavigationEnd) {
-          this.menuOpen.set(false);
-          this.servicesOpen.set(false);
-        }
-      });
+    const router = inject(Router);
+    this.isHome.set(/^\/(en|es)\/?$/.test(router.url));
+    router.events.pipe(takeUntilDestroyed()).subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isHome.set(/^\/(en|es)\/?$/.test(event.urlAfterRedirects));
+        this.menuOpen.set(false);
+        this.servicesOpen.set(false);
+      }
+    });
   }
 
   protected closeMenu(button: HTMLButtonElement): void {

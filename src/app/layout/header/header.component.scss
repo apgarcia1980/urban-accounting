@@ -7,6 +7,24 @@ header {
   background: var(--surface);
   border-block-end: 1px solid var(--hairline);
 }
+@media (min-width: 48rem) {
+  :host:has(.home-overlay) {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+  }
+  .home-overlay {
+    border-block-end: 1px solid rgb(11 25 44 / 10%);
+    background: linear-gradient(90deg, rgb(252 251 248 / 90%), rgb(252 251 248 / 62%));
+    backdrop-filter: blur(3px);
+  }
+  .home-overlay .header-content {
+    padding-block: 1.5rem;
+  }
+  .home-overlay .utility-phone {
+    display: none;
+  }
+}
 .utility-bar {
   border-block-end: 1px solid var(--hairline);
   font-size: 0.6875rem;
@@ -91,12 +109,22 @@ nav a:hover {
 }
 .services-toggle {
   border: 0;
+  background: transparent;
   padding-inline: 0;
   color: var(--muted);
   display: flex;
   align-items: center;
   gap: 0.625rem;
   font-size: inherit;
+}
+:host-context(.high-contrast) .home-overlay {
+  border-block-end-color: var(--hairline);
+  background: var(--surface);
+  backdrop-filter: none;
+}
+:host-context(.high-contrast) .home-overlay nav a,
+:host-context(.high-contrast) .home-overlay .services-toggle {
+  color: var(--ink);
 }
 .services-menu {
   position: absolute;
