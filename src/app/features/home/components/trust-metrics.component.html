@@ -16,7 +16,7 @@
         {{
           data.experienceYears === null
             ? content().pending
-            : data.experienceYears + data.experienceSuffix
+            : animatedValue(data.experienceYears) + data.experienceSuffix
         }}
       </p>
       <p class="label">{{ content().years }}</p>
@@ -36,7 +36,7 @@
     </svg>
     <div>
       <p class="value" [class.pending]="data.google.rating === null">
-        {{ data.google.rating?.toFixed(1) ?? content().pending }}
+        {{ data.google.rating === null ? content().pending : animatedValue(data.google.rating, 1) }}
       </p>
       <p class="label">{{ content().googleReviews }}</p>
       @if (data.google.reviewCount !== null) {
@@ -83,7 +83,7 @@
         {{
           data.satisfiedClients === null
             ? content().pending
-            : data.satisfiedClients + data.clientsSuffix
+            : animatedValue(data.satisfiedClients) + data.clientsSuffix
         }}
       </p>
       <p class="label">{{ content().clients }}</p>

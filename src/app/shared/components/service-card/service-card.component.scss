@@ -56,3 +56,84 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+:host(.featured) {
+  article {
+    padding: clamp(1.5rem, 2.5vw, 2.25rem);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgb(14 39 64 / 4%);
+    transition:
+      border-color var(--motion-duration) var(--motion-easing),
+      background-color var(--motion-duration) var(--motion-easing);
+  }
+  article:hover,
+  article:focus-within {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 3%, var(--surface));
+  }
+  .card-top {
+    padding-block-end: 1rem;
+    margin-block-end: 1.25rem;
+    border-block-end: 1px solid var(--hairline);
+  }
+  .service-mark {
+    display: grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  }
+  .number {
+    font-size: 0.875rem;
+  }
+  h3 {
+    font-size: clamp(1.5rem, 2vw, 1.875rem);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.2;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-block-end: 1.5rem;
+  }
+  a {
+    justify-content: flex-start;
+    gap: 1.25rem;
+    width: fit-content;
+    font-size: 0.9375rem;
+  }
+  a > span[aria-hidden] {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}
+
+:host-context(.high-contrast) {
+  article,
+  article:hover,
+  article:focus-within {
+    background: var(--surface);
+    box-shadow: none;
+  }
+  .service-mark {
+    background: var(--surface);
+    border: 1px solid currentColor;
+  }
+}
+
+@media (forced-colors: active) {
+  :host(.featured) {
+    article {
+      box-shadow: none;
+    }
+    .service-mark {
+      border: 1px solid CanvasText;
+    }
+    article:hover,
+    article:focus-within {
+      border-color: Highlight;
+    }
+  }
+}

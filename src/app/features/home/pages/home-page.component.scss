@@ -1,151 +1,4 @@
-:host {
-  display: block;
-}
-.trust-strip {
-  padding-block: 1.5rem 2rem;
-  border-block-end: 1px solid var(--hairline);
-  background: rgb(255 255 255 / 68%);
-}
-.trust-title {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 1.25rem;
-  align-items: center;
-  margin: 0 0 1.5rem;
-  color: var(--accent);
-  font-size: 0.625rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-align: center;
-}
-.trust-title span {
-  height: 1px;
-  background: var(--hairline);
-}
-.trust-groups {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.trust-group {
-  padding-inline: clamp(1rem, 4vw, 4rem);
-}
-.trust-group + .trust-group {
-  border-inline-start: 1px solid var(--hairline);
-}
-.trust-group .eyebrow {
-  text-align: center;
-  font-size: 0.5625rem;
-}
-.trust-marks {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 1.5rem;
-  min-height: 3.5rem;
-  color: var(--ink);
-}
-.trust-marks > span {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  min-width: 0;
-}
-.credentials > span + span,
-.platforms .trust-marks > span + span {
-  padding-inline-start: clamp(1rem, 3vw, 2.5rem);
-  border-inline-start: 1px solid var(--hairline);
-}
-.quickbooks-mark {
-  display: grid !important;
-  grid-template-columns: 1.5rem auto;
-  column-gap: 0.25rem;
-  line-height: 1;
-}
-.quickbooks-mark b {
-  grid-row: span 2;
-  display: grid;
-  place-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  color: #fff;
-  background: #2ca01c;
-  font-size: 0.7rem;
-}
-.quickbooks-mark i {
-  font-size: 0.45rem;
-  font-style: normal;
-}
-.quickbooks-mark strong {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  letter-spacing: -0.06em;
-}
-.quickbooks-mark small,
-.enrolled-agent-mark small {
-  grid-column: 1 / -1;
-  margin-top: 0.22rem;
-  font-size: 0.42rem;
-  color: var(--muted);
-}
-.enrolled-agent-mark {
-  display: grid !important;
-  grid-template-columns: 2rem auto;
-  column-gap: 0.45rem;
-  line-height: 1;
-}
-.enrolled-agent-mark b {
-  grid-row: span 2;
-  display: grid;
-  place-items: center;
-  width: 1.8rem;
-  height: 1.8rem;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--accent);
-  font-size: 0.55rem;
-}
-.enrolled-agent-mark strong {
-  align-self: end;
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-}
-.enrolled-agent-mark small {
-  grid-column: 2;
-}
-.oracle-mark {
-  display: grid !important;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-}
-.oracle-mark small {
-  font-size: 0.7rem;
-}
-.sage-mark {
-  color: #45a843;
-  font-family: Georgia, serif;
-  font-size: 1.75rem;
-}
-.sap-mark {
-  width: 5rem;
-  height: auto;
-  object-fit: contain;
-}
-:host-context(.high-contrast) .trust-strip {
-  background: var(--canvas);
-}
-:host-context(.high-contrast) .quickbooks-mark b {
-  color: #000;
-  background: var(--accent);
-}
-:host-context(.high-contrast) .sage-mark {
-  color: var(--ink);
-}
-:host-context(.high-contrast) .sap-mark {
-  outline: 1px solid var(--ink);
-}
+@use 'trust-strip';
 .services-section,
 .process-section {
   background: var(--soft-surface);
@@ -154,6 +7,21 @@
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1rem;
+}
+.services-section .section-intro {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+  gap: 2rem;
+  margin-block-end: 2rem;
+}
+.services-section h2 {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: 1.1;
+  margin-block-end: 0;
+}
+.services-section .section-description {
+  max-width: 36ch;
+  justify-self: end;
+  margin: 0;
 }
 app-service-card {
   grid-column: span 2;
@@ -296,6 +164,16 @@ app-service-card:nth-last-child(-n + 2) {
 }
 
 @media (max-width: 64rem) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  app-service-card,
+  app-service-card:nth-last-child(-n + 2) {
+    grid-column: auto;
+  }
+  app-service-card:last-child {
+    grid-column: 1 / -1;
+  }
   .process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -305,34 +183,13 @@ app-service-card:nth-last-child(-n + 2) {
   }
 }
 @media (max-width: 47.99rem) {
-  .trust-title {
+  .services-section .section-intro {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  .trust-title span {
-    display: none;
-  }
-  .trust-groups {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .trust-group {
-    padding-inline: 0;
-  }
-  .trust-group + .trust-group {
-    border-inline-start: 0;
-    border-block-start: 1px solid var(--hairline);
-    padding-block-start: 1.5rem;
-  }
-  .trust-marks {
-    gap: 0.75rem;
-    justify-content: space-between;
-  }
-  .credentials > span + span,
-  .platforms .trust-marks > span + span {
-    padding-inline-start: 0.75rem;
-  }
-  .sage-mark {
-    font-size: 1.4rem;
+  .services-section .section-description {
+    justify-self: start;
+    max-width: none;
   }
   .about-grid,
   .local-grid,

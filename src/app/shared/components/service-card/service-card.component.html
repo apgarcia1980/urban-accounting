@@ -7,6 +7,6 @@
   <p>{{ service().description }}</p>
   <a [routerLink]="destination()" [fragment]="fragment()"
     >{{ action() }}<span class="sr-only">: {{ service().title }}</span
-    ><span aria-hidden="true">↗</span></a
+    ><span aria-hidden="true">{{ featured() ? '→' : '↗' }}</span></a
   >
 </article>

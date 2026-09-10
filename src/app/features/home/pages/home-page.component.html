@@ -25,7 +25,17 @@
     <div class="trust-groups">
       <div class="trust-group">
         <p class="eyebrow">
-          ⌘&nbsp;
+          <svg
+            class="trust-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="9" r="6.5" />
+            <path d="m7 14-2 8 4-2 3 2 1-6m4-2 2 8-4-2" />
+          </svg>
           {{
             language.current() === 'es' ? 'CREDENCIALES PROFESIONALES' : 'PROFESSIONAL CREDENTIALS'
           }}
@@ -42,13 +52,26 @@
       </div>
       <div class="trust-group platforms">
         <p class="eyebrow">
-          ▱&nbsp;
+          <svg
+            class="trust-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <rect x="4" y="3" width="16" height="14" rx="1" />
+            <path d="m4 17-2 4h20l-2-4M9 21h6" />
+          </svg>
           {{ language.current() === 'es' ? 'PLATAFORMAS Y ECOSISTEMAS' : 'PLATFORMS & ECOSYSTEMS' }}
         </p>
         <div class="trust-marks">
           <span class="oracle-mark">ORACLE<small>NETSUITE</small></span>
           <span class="sage-mark">Sage</span>
-          <img class="sap-mark" src="/images/sap-wordmark.svg" alt="SAP" width="80" height="43" />
+          <span class="sap-brand">
+            <img class="sap-mark" src="/images/sap-wordmark.svg" alt="SAP" width="80" height="43" />
+            <span class="sap-contrast">SAP</span>
+          </span>
         </div>
       </div>
     </div>
@@ -67,6 +90,7 @@
     <div class="services-grid">
       @for (service of content().services.items; track service.id; let i = $index) {
         <app-service-card
+          [featured]="true"
           [service]="service"
           [number]="i + 1"
           [action]="content().services.action"

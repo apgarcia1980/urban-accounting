@@ -9,7 +9,8 @@
 .masthead-photo {
   position: absolute;
   inset: 0;
-  width: 100%;
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
   height: 100%;
   object-fit: cover;
   object-position: center right;
@@ -19,6 +20,8 @@
   content: '';
   position: absolute;
   inset: 0;
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
   z-index: -1;
   background: linear-gradient(
     90deg,

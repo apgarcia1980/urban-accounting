@@ -7,8 +7,10 @@ import { ServiceContent } from '../../../core/models/home-content';
   imports: [RouterLink],
   templateUrl: './service-card.component.html',
   styleUrl: './service-card.component.scss',
+  host: { '[class.featured]': 'featured()' },
 })
 export class ServiceCardComponent {
+  readonly featured = input(false);
   readonly fragment = input<string>();
   readonly service = input.required<ServiceContent>();
   readonly number = input.required<number>();
