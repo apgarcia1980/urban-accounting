@@ -1,3 +1,4 @@
+import { PhotoMastheadComponent } from '../../../shared/components/photo-masthead/photo-masthead.component';
 import { Component, computed, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -21,6 +22,7 @@ import { ServiceHeroComponent } from '../components/service-hero.component';
 @Component({
   selector: 'app-service-page',
   imports: [
+    PhotoMastheadComponent,
     RouterLink,
     BreadcrumbComponent,
     FaqComponent,

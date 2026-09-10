@@ -22,3 +22,20 @@
   background: var(--canvas);
   color: var(--ink);
 }
+.glass-surface {
+  color: var(--ink);
+  background: var(--canvas);
+  background: color-mix(in srgb, var(--canvas) 74%, transparent);
+  border: 1px solid color-mix(in srgb, var(--hairline) 70%, transparent);
+  box-shadow: 0 1rem 2.5rem rgb(11 25 44 / 8%);
+  backdrop-filter: blur(14px);
+}
+@media (forced-colors: active) {
+  .glass-surface {
+    background: Canvas;
+    color: CanvasText;
+    border-color: CanvasText;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}

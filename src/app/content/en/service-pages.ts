@@ -18,7 +18,18 @@ export const enServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Discuss your accounting needs',
       secondary: 'Explore the service',
       note: 'For businesses and small business owners in Miami.',
-      focus: ['Financial records', 'Business perspective', 'Personal attention'],
+      focus: [
+        {
+          title: 'Financial records',
+          description: 'Organized records for better-informed decisions.',
+        },
+        { title: 'Business perspective', description: 'A clearer view of your business finances.' },
+        {
+          title: 'Personal attention',
+          description: 'Accounting support shaped around your needs.',
+        },
+      ],
+      focusCaption: 'Trusted expertise. Familiar tools.',
     },
     introduction: {
       eyebrow: 'THE BIGGER PICTURE',
@@ -166,7 +177,18 @@ export const enServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Discuss your bookkeeping needs',
       secondary: 'Explore the service',
       note: 'Professional attention to your business books.',
-      focus: ['Organized records', 'Financial information', 'Day-to-day clarity'],
+      focus: [
+        {
+          title: 'Organized records',
+          description: 'Structure for your business financial records.',
+        },
+        {
+          title: 'Financial information',
+          description: 'Careful attention to the details in your books.',
+        },
+        { title: 'Day-to-day clarity', description: 'A clearer picture of day-to-day finances.' },
+      ],
+      focusCaption: 'Trusted expertise. Familiar tools.',
     },
     introduction: {
       eyebrow: 'START WITH THE RECORDS',
@@ -312,7 +334,18 @@ export const enServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Discuss your financial statements',
       secondary: 'Explore the service',
       note: 'A clearer view of your business finances.',
-      focus: ['Financial clarity', 'Organized information', 'Business perspective'],
+      focus: [
+        { title: 'Financial clarity', description: 'A clearer view of your financial position.' },
+        {
+          title: 'Organized information',
+          description: 'Business information brought together in context.',
+        },
+        {
+          title: 'Business perspective',
+          description: 'Statements tailored to your business needs.',
+        },
+      ],
+      focusCaption: 'Trusted expertise. Familiar tools.',
     },
     introduction: {
       eyebrow: 'SEE THE FULLER PICTURE',
@@ -461,7 +494,18 @@ export const enServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Discuss tax preparation',
       secondary: 'Explore the service',
       note: 'A considered approach to preparing your taxes.',
-      focus: ['Organized information', 'Careful preparation', 'Professional support'],
+      focus: [
+        {
+          title: 'Organized information',
+          description: 'Bring together the details relevant to your taxes.',
+        },
+        {
+          title: 'Careful preparation',
+          description: 'Careful attention to tax preparation details.',
+        },
+        { title: 'Professional support', description: 'Discuss the support your situation needs.' },
+      ],
+      focusCaption: 'Trusted expertise. Familiar tools.',
     },
     introduction: {
       eyebrow: 'PREPARE WITH CLARITY',
@@ -609,7 +653,21 @@ export const enServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Discuss tax planning',
       secondary: 'Explore the service',
       note: 'A more proactive perspective on tax questions.',
-      focus: ['Forward-looking review', 'Organized information', 'Informed decisions'],
+      focus: [
+        {
+          title: 'Forward-looking review',
+          description: 'Consider tax questions before preparation time.',
+        },
+        {
+          title: 'Organized information',
+          description: 'Financial records that support your planning.',
+        },
+        {
+          title: 'Informed decisions',
+          description: 'More time and context to discuss your options.',
+        },
+      ],
+      focusCaption: 'Trusted expertise. Familiar tools.',
     },
     introduction: {
       eyebrow: 'LOOKING AHEAD',

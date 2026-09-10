@@ -1,3 +1,4 @@
+import { PhotoMastheadComponent } from '../../../shared/components/photo-masthead/photo-masthead.component';
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../../core/i18n/language.service';
@@ -13,7 +14,13 @@ import { ConsultationCtaComponent } from '../../../shared/components/consultatio
 
 @Component({
   selector: 'app-about-page',
-  imports: [RouterLink, BreadcrumbComponent, ServiceCardComponent, ConsultationCtaComponent],
+  imports: [
+    PhotoMastheadComponent,
+    RouterLink,
+    BreadcrumbComponent,
+    ServiceCardComponent,
+    ConsultationCtaComponent,
+  ],
   templateUrl: './about-page.component.html',
   styleUrl: './about-page.component.scss',
 })

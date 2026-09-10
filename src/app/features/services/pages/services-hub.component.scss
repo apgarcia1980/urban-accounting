@@ -3,8 +3,8 @@
 }
 .hub-hero {
   padding-block: clamp(3rem, 7vw, 6rem);
-  background: var(--soft-surface);
-  border-bottom: 1px solid var(--hairline);
+  background: transparent;
+  border-bottom: 0;
 }
 h1 {
   max-width: 18ch;

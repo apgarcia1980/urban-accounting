@@ -1,7 +1,9 @@
-<div class="container">
-  <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
-</div>
-<app-service-hero [content]="content().hero" [consultation]="consultation()" [path]="path()" />
+<app-photo-masthead [image]="content().id">
+  <div class="container">
+    <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
+  </div>
+  <app-service-hero [content]="content().hero" [consultation]="consultation()" [path]="path()" />
+</app-photo-masthead>
 
 <section id="service-details" class="section introduction">
   <div class="container split">

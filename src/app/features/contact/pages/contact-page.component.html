@@ -1,18 +1,20 @@
-<div class="container">
-  <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
-</div>
-<section class="hero">
+<app-photo-masthead image="contact">
   <div class="container">
-    <div class="hero-content">
-      <p class="eyebrow">{{ content().hero.eyebrow }}</p>
-      <h1>{{ content().hero.title }}</h1>
-      <p>{{ content().hero.description }}</p>
-      <a class="text-link" [routerLink]="pageUrl(language.current(), 'services')"
-        >{{ content().hero.action }}<span aria-hidden="true">↗</span></a
-      >
-    </div>
+    <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
   </div>
-</section>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="eyebrow">{{ content().hero.eyebrow }}</p>
+        <h1>{{ content().hero.title }}</h1>
+        <p>{{ content().hero.description }}</p>
+        <a class="text-link" [routerLink]="pageUrl(language.current(), 'services')"
+          >{{ content().hero.action }}<span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </div>
+  </section>
+</app-photo-masthead>
 <section class="section">
   <div class="container contact-grid">
     <div class="details">

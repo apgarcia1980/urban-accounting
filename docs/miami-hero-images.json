@@ -1,0 +1,55 @@
+{
+  "generator": "Built-in image_gen",
+  "purpose": "Decorative generated images; not photographs of Urban Accounting premises, staff, or clients.",
+  "sharedPrompt": "Create a wide 16:9 photorealistic editorial website hero photograph for a boutique Miami financial firm. Bright natural morning light, pale limestone, subtle palms, warm white and restrained teal blue, refined premium architecture. Scene and detail concentrated on the RIGHT HALF, left half is naturally bright uncluttered pale wall/sky with generous negative space for dark text. Top quarter light uncluttered for navigation. No text, no logos, no people, no claims, no montage. ",
+  "images": [
+    {
+      "page": "about",
+      "asset": "public/images/miami-about-hero.webp",
+      "mobileAsset": "public/images/miami-about-hero-small.webp",
+      "prompt": "ABOUT page: sophisticated Miami waterfront pedestrian promenade with contemporary local architecture and Biscayne Bay beyond, sense of local community and rootedness. Different viewpoint from typical downtown skyline. Produce a single background photograph only."
+    },
+    {
+      "page": "contact",
+      "asset": "public/images/miami-contact-hero.webp",
+      "mobileAsset": "public/images/miami-contact-hero-small.webp",
+      "prompt": "CONTACT page: welcoming covered outdoor Miami terrace, limestone bench and small round table on the right, blue water and palms beyond, inviting place to start a conversation. No sign, no purported real office."
+    },
+    {
+      "page": "services",
+      "asset": "public/images/miami-services-hero.webp",
+      "mobileAsset": "public/images/miami-services-hero-small.webp",
+      "prompt": "SERVICES overview page: refined Miami waterfront business district architecture viewed from a quiet pale stone terrace with an understated table holding closed navy folios on the far right."
+    },
+    {
+      "page": "accounting",
+      "asset": "public/images/miami-accounting-hero.webp",
+      "mobileAsset": "public/images/miami-accounting-hero-small.webp",
+      "prompt": "ACCOUNTING service page: pale oak desk at right with a closed navy accounting ledger, simple calculator and pen, large bright window overlooking Miami water and modern towers."
+    },
+    {
+      "page": "bookkeeping",
+      "asset": "public/images/miami-bookkeeping-hero.webp",
+      "mobileAsset": "public/images/miami-bookkeeping-hero-small.webp",
+      "prompt": "BOOKKEEPING service page: right side orderly receipts with unreadable tiny marks, tabbed cream folders and pencil on bright stone desk, palms and Miami bay visible through window. No legible financial data."
+    },
+    {
+      "page": "financial-statements",
+      "asset": "public/images/miami-financial-statements-hero.webp",
+      "mobileAsset": "public/images/miami-financial-statements-hero-small.webp",
+      "prompt": "FINANCIAL STATEMENTS service page: right side a few clean financial report sheets with subtle abstract navy bar charts and a metal pen, bright Miami waterfront window background, no legible text or numbers."
+    },
+    {
+      "page": "tax-preparation",
+      "asset": "public/images/miami-tax-preparation-hero.webp",
+      "mobileAsset": "public/images/miami-tax-preparation-hero-small.webp",
+      "prompt": "TAX PREPARATION service page: right side neat manila document folder, generic blank form sheets, calculator and black pen on pale desk, sunlit Miami architecture and palm outside, no real IRS forms, no readable text."
+    },
+    {
+      "page": "tax-planning",
+      "asset": "public/images/miami-tax-planning-hero.webp",
+      "mobileAsset": "public/images/miami-tax-planning-hero-small.webp",
+      "prompt": "TAX PLANNING service page: right side open minimalist paper planner with blank grid, navy pen and closed folder, pale limestone terrace looking toward Miami's blue bay in soft morning light, no readable text."
+    }
+  ]
+}

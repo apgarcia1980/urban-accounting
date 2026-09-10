@@ -15,7 +15,8 @@ export interface ServicePageContent {
     primary: string;
     secondary: string;
     note: string;
-    focus: readonly string[];
+    focus: readonly ServiceDetail[];
+    focusCaption: string;
   };
   introduction: SectionHeading & { paragraphs: readonly string[] };
   features: SectionHeading & { items: readonly ServiceDetail[] };

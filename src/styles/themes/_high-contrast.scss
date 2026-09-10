@@ -11,3 +11,9 @@
   --focus: #ffeb3b;
   color-scheme: dark;
 }
+.high-contrast .glass-surface {
+  background: var(--canvas);
+  border-color: var(--hairline);
+  box-shadow: none;
+  backdrop-filter: none;
+}

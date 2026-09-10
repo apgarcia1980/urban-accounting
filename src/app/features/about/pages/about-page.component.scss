@@ -3,15 +3,8 @@
 }
 .hero {
   padding-block: clamp(2.5rem, 5vw, 5rem);
-  border-bottom: 1px solid var(--hairline);
-  background:
-    linear-gradient(
-      90deg,
-      var(--canvas) 0%,
-      rgb(252 251 248 / 94%) 38%,
-      rgb(252 251 248 / 12%) 72%
-    ),
-    url('/images/miami-bay-hero.webp') right center / auto 100% no-repeat;
+  border-bottom: 0;
+  background: transparent;
 }
 .hero-grid,
 .split {
@@ -32,9 +25,6 @@ h1 {
 .hero-card {
   padding: clamp(1.5rem, 4vw, 3rem);
   border-radius: var(--radius-sm);
-  background:
-    linear-gradient(135deg, rgb(11 25 44 / 92%), rgb(11 25 44 / 66%)),
-    url('/images/miami-bay-hero.webp') 72% center / cover;
 }
 .hero-card > span {
   display: block;

@@ -18,7 +18,18 @@ export const esServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Hablemos de tu contabilidad',
       secondary: 'Conoce el servicio',
       note: 'Para empresas y pequeños negocios en Miami.',
-      focus: ['Registros financieros', 'Perspectiva de negocio', 'Atención personal'],
+      focus: [
+        {
+          title: 'Registros financieros',
+          description: 'Registros organizados para decidir con más información.',
+        },
+        {
+          title: 'Perspectiva de negocio',
+          description: 'Una visión más clara de las finanzas de tu negocio.',
+        },
+        { title: 'Atención personal', description: 'Apoyo contable adaptado a tus necesidades.' },
+      ],
+      focusCaption: 'Experiencia de confianza. Herramientas conocidas.',
     },
     introduction: {
       eyebrow: 'UNA VISIÓN DE CONJUNTO',
@@ -166,7 +177,21 @@ export const esServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Hablemos de tus libros',
       secondary: 'Conoce el servicio',
       note: 'Atención profesional a tus registros contables.',
-      focus: ['Registros organizados', 'Información financiera', 'Claridad en el día a día'],
+      focus: [
+        {
+          title: 'Registros organizados',
+          description: 'Orden en los registros financieros de tu negocio.',
+        },
+        {
+          title: 'Información financiera',
+          description: 'Atención a los detalles de tus libros contables.',
+        },
+        {
+          title: 'Claridad en el día a día',
+          description: 'Una visión más clara de las finanzas del día a día.',
+        },
+      ],
+      focusCaption: 'Experiencia de confianza. Herramientas conocidas.',
     },
     introduction: {
       eyebrow: 'EMPEZAMOS POR LOS REGISTROS',
@@ -314,7 +339,21 @@ export const esServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Hablemos de tus estados financieros',
       secondary: 'Conoce el servicio',
       note: 'Una visión más clara de las finanzas de tu empresa.',
-      focus: ['Claridad financiera', 'Información organizada', 'Perspectiva de negocio'],
+      focus: [
+        {
+          title: 'Claridad financiera',
+          description: 'Una visión más clara de tu situación financiera.',
+        },
+        {
+          title: 'Información organizada',
+          description: 'Información del negocio reunida y puesta en contexto.',
+        },
+        {
+          title: 'Perspectiva de negocio',
+          description: 'Estados financieros adaptados a tu negocio.',
+        },
+      ],
+      focusCaption: 'Experiencia de confianza. Herramientas conocidas.',
     },
     introduction: {
       eyebrow: 'UNA VISIÓN MÁS COMPLETA',
@@ -464,7 +503,18 @@ export const esServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Hablemos de impuestos',
       secondary: 'Conoce el servicio',
       note: 'Un enfoque cuidado para preparar tus impuestos.',
-      focus: ['Información organizada', 'Preparación cuidada', 'Apoyo profesional'],
+      focus: [
+        {
+          title: 'Información organizada',
+          description: 'Reúne la información relevante para tus impuestos.',
+        },
+        {
+          title: 'Preparación cuidada',
+          description: 'Atención a los detalles de la preparación fiscal.',
+        },
+        { title: 'Apoyo profesional', description: 'Conversemos sobre el apoyo que necesitas.' },
+      ],
+      focusCaption: 'Experiencia de confianza. Herramientas conocidas.',
     },
     introduction: {
       eyebrow: 'PREPÁRATE CON CLARIDAD',
@@ -612,7 +662,21 @@ export const esServicePages: Record<PublishedServiceId, ServicePageContent> = {
       primary: 'Hablemos de planificación fiscal',
       secondary: 'Conoce el servicio',
       note: 'Una perspectiva más proactiva sobre tus preguntas fiscales.',
-      focus: ['Revisión anticipada', 'Información organizada', 'Decisiones informadas'],
+      focus: [
+        {
+          title: 'Revisión anticipada',
+          description: 'Aborda tus dudas fiscales antes de la preparación.',
+        },
+        {
+          title: 'Información organizada',
+          description: 'Registros financieros que apoyan tu planificación.',
+        },
+        {
+          title: 'Decisiones informadas',
+          description: 'Más tiempo y contexto para valorar tus opciones.',
+        },
+      ],
+      focusCaption: 'Experiencia de confianza. Herramientas conocidas.',
     },
     introduction: {
       eyebrow: 'MIRAR HACIA ADELANTE',

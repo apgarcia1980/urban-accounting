@@ -5,15 +5,8 @@
   inline-size: 100%;
   margin-inline-start: 0;
   padding-block: 2.5rem 3rem;
-  border-bottom: 1px solid var(--hairline);
-  background:
-    linear-gradient(
-      90deg,
-      var(--canvas) 0%,
-      rgb(252 251 248 / 95%) 38%,
-      rgb(252 251 248 / 18%) 72%
-    ),
-    url('/images/miami-bay-hero.webp') right center / auto 100% no-repeat;
+  border-bottom: 0;
+  background: transparent;
 }
 .hero-content {
   max-width: 44rem;
@@ -70,7 +63,7 @@ address a {
 }
 @media (max-width: 48rem) {
   .hero {
-    background: var(--canvas);
+    background: transparent;
   }
   .contact-grid {
     grid-template-columns: 1fr;

@@ -1,3 +1,4 @@
+import { PhotoMastheadComponent } from '../../../shared/components/photo-masthead/photo-masthead.component';
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../../core/i18n/language.service';
@@ -12,7 +13,13 @@ import { LocationMapComponent } from '../../../shared/components/location-map/lo
 
 @Component({
   selector: 'app-contact-page',
-  imports: [RouterLink, BreadcrumbComponent, ContactFormComponent, LocationMapComponent],
+  imports: [
+    PhotoMastheadComponent,
+    RouterLink,
+    BreadcrumbComponent,
+    ContactFormComponent,
+    LocationMapComponent,
+  ],
   templateUrl: './contact-page.component.html',
   styleUrl: './contact-page.component.scss',
 })

@@ -13,21 +13,27 @@
       </div>
       <p class="note">{{ content().note }}</p>
     </div>
-    <div class="focus-card dark-surface">
+    <div class="focus-card glass-surface">
       <div class="card-top">
         <span class="monogram" aria-hidden="true">ua.</span
         ><span aria-hidden="true">MIAMI / FL</span>
       </div>
       <ul>
-        @for (focus of content().focus; track focus; let i = $index) {
+        @for (focus of content().focus; track focus.title; let i = $index) {
           <li>
-            <span class="number" aria-hidden="true">0{{ i + 1 }}</span
-            ><span>{{ focus }}</span
-            ><span class="cross" aria-hidden="true">+</span>
+            <span class="number" aria-hidden="true">0{{ i + 1 }}</span>
+            <div class="focus-copy">
+              <span>{{ focus.title }}</span>
+              <p>{{ focus.description }}</p>
+            </div>
+            <span class="cross" aria-hidden="true">→</span>
           </li>
         }
       </ul>
-      <div class="architecture" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="card-footer">
+        <div class="architecture" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p>{{ content().focusCaption }}</p>
+      </div>
     </div>
   </div>
 </section>

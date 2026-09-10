@@ -3,6 +3,7 @@
 }
 html {
   font-size: var(--text-scale);
+  scroll-padding-block-start: calc(var(--site-header-height, 9rem) + var(--space-md));
 }
 body {
   margin: 0;

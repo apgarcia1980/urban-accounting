@@ -1,27 +1,29 @@
-<div class="container">
-  <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
-</div>
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">{{ content().hero.eyebrow }}</p>
-      <h1>{{ content().hero.title }}</h1>
-      <p>{{ content().hero.description }}</p>
-      <a class="button button-primary" [routerLink]="pageUrl(language.current(), 'contact')"
-        >{{ content().hero.action }}<span aria-hidden="true">↗</span></a
-      >
-    </div>
-    <div class="hero-card dark-surface">
-      <span aria-hidden="true">ua.</span>
-      <p>{{ language.content().navigation.services }}</p>
-      <ul>
-        @for (service of services(); track service.id) {
-          <li>{{ service.title }}</li>
-        }
-      </ul>
-    </div>
+<app-photo-masthead image="about">
+  <div class="container">
+    <app-breadcrumb [items]="breadcrumbs()" [label]="language.content().breadcrumbs" />
   </div>
-</section>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">{{ content().hero.eyebrow }}</p>
+        <h1>{{ content().hero.title }}</h1>
+        <p>{{ content().hero.description }}</p>
+        <a class="button button-primary" [routerLink]="pageUrl(language.current(), 'contact')"
+          >{{ content().hero.action }}<span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <div class="hero-card glass-surface">
+        <span aria-hidden="true">ua.</span>
+        <p>{{ language.content().navigation.services }}</p>
+        <ul>
+          @for (service of services(); track service.id) {
+            <li>{{ service.title }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+</app-photo-masthead>
 <section class="section">
   <div class="container split">
     <div>
