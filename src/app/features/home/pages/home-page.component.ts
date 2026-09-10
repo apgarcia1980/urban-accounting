@@ -1,3 +1,7 @@
+import { TrustMetricsComponent } from '../components/trust-metrics.component';
+import { GoogleReviewsSummaryComponent } from '../components/google-reviews-summary.component';
+import { enHomeTrust } from '../../../content/en/home-trust';
+import { esHomeTrust } from '../../../content/es/home-trust';
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../../core/i18n/language.service';
@@ -19,6 +23,8 @@ import { HomeHeroComponent } from '../components/home-hero.component';
     FaqComponent,
     ConsultationCtaComponent,
     HomeHeroComponent,
+    TrustMetricsComponent,
+    GoogleReviewsSummaryComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
@@ -26,6 +32,9 @@ import { HomeHeroComponent } from '../components/home-hero.component';
 export class HomePageComponent {
   protected readonly language = inject(LanguageService);
   protected readonly content = computed(() => (this.language.current() === 'es' ? esHome : enHome));
+  protected readonly trustContent = computed(() =>
+    this.language.current() === 'es' ? esHomeTrust : enHomeTrust,
+  );
   protected readonly consultation = computed(() => consultationRoutes[this.language.current()]);
   protected readonly business = businessConfig;
   protected readonly serviceDestination = serviceDestination;

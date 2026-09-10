@@ -1,0 +1,68 @@
+<section class="container reviews" aria-labelledby="home-reviews-title">
+  <p class="eyebrow">{{ content().eyebrow }}</p>
+  <h2 id="home-reviews-title">{{ content().title }}</h2>
+  <p class="description">{{ content().description }}</p>
+  <div class="summary">
+    <span class="google" aria-label="Google"
+      ><span aria-hidden="true"
+        ><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span
+      ></span
+    >
+    <div class="rating">
+      <div class="rating-line">
+        @if (data.rating !== null) {
+          <strong class="rating-value" aria-hidden="true">{{ data.rating.toFixed(1) }}</strong>
+        }
+        <span class="stars" role="img" [attr.aria-label]="ratingLabel()">
+          @for (star of stars; track star) {
+            <span class="star"
+              ><span aria-hidden="true">☆</span
+              ><span
+                class="filled"
+                aria-hidden="true"
+                [style.width.%]="
+                  data.rating === null
+                    ? 0
+                    : data.rating >= star
+                      ? 100
+                      : data.rating > star - 1
+                        ? (data.rating - star + 1) * 100
+                        : 0
+                "
+                >★</span
+              ></span
+            >
+          }
+        </span>
+      </div>
+      <p class="rating-text">{{ ratingLabel() }}</p>
+      @if (data.reviewCount !== null) {
+        <p>{{ content().countLabel.replace('{count}', data.reviewCount.toString()) }}</p>
+      }
+    </div>
+  </div>
+  @if (data.reviewsUrl) {
+    <a
+      class="button button-primary"
+      [href]="data.reviewsUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      >{{ content().action }}<span aria-hidden="true">↗</span></a
+    >
+  } @else {
+    <button
+      class="button button-primary pending-button"
+      type="button"
+      disabled
+      aria-describedby="reviews-link-pending"
+    >
+      {{ content().action }}<span aria-hidden="true">↗</span>
+    </button>
+    <p id="reviews-link-pending" class="note">{{ content().pendingLink }}</p>
+  }
+  <p class="note">
+    {{
+      data.rating !== null && data.reviewCount !== null ? content().source : content().pendingSource
+    }}
+  </p>
+</section>
